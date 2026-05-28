@@ -1,0 +1,114 @@
+{
+  "info": {
+    "name": "GREENHERB API - Bodies Corrigidos",
+    "description": "Exemplos de bodies corretos para os testes (FLAT, sem wrapper)",
+    "date": "2026-05-21"
+  },
+  "endpoints": {
+    "POST /api/batches": {
+      "description": "Criar lote - FLAT (sem wrapper)",
+      "body": {
+        "name": "Batch 001",
+        "herbId": 4,
+        "cultivationPlanId": 1,
+        "plantDate": "2024-01-01",
+        "expectedHarvestDate": "2024-03-01",
+        "status": "preparing",
+        "numberOfDivisions": 3,
+        "lossPercentage": 2.5,
+        "productivity": 100
+      },
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "script_post": "pm.globals.set('batch_id', pm.response.json().id);"
+    },
+    "POST /api/plans": {
+      "description": "Criar plano de cultivo",
+      "body": {
+        "herbId": 4,
+        "startDate": "2024-01-01",
+        "durationDays": 60,
+        "wateringFrequencyDays": 2,
+        "notes": "Plano de cultivo para Alecrim",
+        "temperatureMin": 15,
+        "temperatureMax": 25,
+        "humidityMin": 40,
+        "humidityMax": 70,
+        "luminosityMin": 5000,
+        "luminosityMax": 20000
+      },
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "script_post": "pm.globals.set('plan_id', pm.response.json().id);"
+    },
+    "POST /api/measurements": {
+      "description": "Criar medição - FLAT (sem wrapper)",
+      "body": {
+        "batchId": "{{batch_id}}",
+        "temperature": 25.5,
+        "humidity": 65,
+        "luminosity": 5000
+      },
+      "headers": {
+        "Content-Type": "application/json"
+      }
+    },
+    "POST /api/tasks": {
+      "description": "Criar tarefa - FLAT (sem wrapper)",
+      "body": {
+        "name": "Water plants",
+        "batchId": "{{batch_id}}",
+        "taskType": "watering",
+        "description": "Water the plants thoroughly",
+        "scheduledDate": "2024-01-15",
+        "status": "Pendente"
+      },
+      "headers": {
+        "Content-Type": "application/json"
+      }
+    },
+    "POST /api/automations": {
+      "description": "Criar automação",
+      "body": {
+        "name": "Automação de Rega",
+        "description": "Rega automática quando temperatura > 25°C",
+        "batchId": "{{batch_id}}",
+        "isActive": true,
+        "triggerCondition": "temperature > 25",
+        "action": "activate_irrigation",
+        "operationMode": "Automático"
+      },
+      "headers": {
+        "Content-Type": "application/json"
+      }
+    },
+    "POST /api/herbs/import": {
+      "description": "Importar ervas de arquivo CSV",
+      "body_type": "form-data",
+      "fields": {
+        "file": {
+          "type": "file",
+          "value": "herbs.csv (arquivo real)",
+          "IMPORTANTE": "Mude o tipo de 'text' para 'file' no Postman"
+        }
+      },
+      "headers": {
+        "Content-Type": "multipart/form-data"
+      }
+    }
+  },
+  "changelog": {
+    "criado": "2026-05-21",
+    "versao": "1.0",
+    "changes": [
+      "✅ Removido wrapper 'batch' - agora FLAT",
+      "✅ Removido wrapper 'measurement' - agora FLAT",
+      "✅ Removido wrapper 'task' - agora FLAT",
+      "✅ Rota /api/plans ativa (antes retornava 404)",
+      "✅ Rota /api/automations ativa (antes retornava 404)",
+      "⚠️ POST /herbs/import: campo file deve ser type:file (não text)"
+    ]
+  }
+}

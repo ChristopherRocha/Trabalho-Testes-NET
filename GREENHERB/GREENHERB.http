@@ -1,0 +1,6 @@
+@GREENHERB_HostAddress = http://localhost:5114
+
+GET {{GREENHERB_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
