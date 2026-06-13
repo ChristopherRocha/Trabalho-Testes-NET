@@ -72,6 +72,8 @@ public class PlanController : ControllerBase
 			return BadRequest(new { message = "Dados do plano sao obrigatorios" });
 		}
 
+		// compatibilidade: ver método CreateAsync separado na classe
+
 		if (plan.HerbId <= 0 && herbId <= 0)
 		{
 			return BadRequest(new { message = "HerbId invalido" });
@@ -145,12 +147,48 @@ public class PlanController : ControllerBase
 			}
 		}
 
-		plan.CreatedAt = DateTime.UtcNow;
-		plan.UpdatedAt = DateTime.UtcNow;
-		plan.Id = new Random().Next(1000, 9999); // Mock ID gerado
+		// Prepare request DTO and delegate creation to service (tests mock this)
+		var herbIdToUse = herbId > 0 ? herbId : plan.HerbId;
 
-		return CreatedAtAction(nameof(GetById), new { id = plan.Id }, plan);
+		var requestDto = new CultivationPlanRequest
+		{
+			StartDate = plan.StartDate,
+			DurationDays = plan.DurationDays,
+			WateringFrequencyDays = plan.WateringFrequencyDays,
+			Notes = plan.Notes
+		};
+
+		var created = await _planService.CreateAsync(herbIdToUse, requestDto);
+		if (created == null)
+		{
+			return NotFound(new { message = "Erro ao criar plano" });
+		}
+
+		return CreatedAtAction(nameof(GetById), new { id = created.Id }, created);
 	}
+
+		// Compatibilidade com testes: aceitar um request DTO e encaminhar para a criação
+		public async Task<ActionResult<CultivationPlan>> Create(CultivationPlanRequest request, int herbId)
+		{
+			if (request == null)
+			{
+				return BadRequest(new { message = "Dados do plano sao obrigatorios" });
+			}
+
+			if (request == null)
+			{
+				return BadRequest(new { message = "Dados do plano sao obrigatorios" });
+			}
+
+			var herbIdToUse = herbId > 0 ? herbId : 0;
+			var created = await _planService.CreateAsync(herbIdToUse, request);
+			if (created == null)
+			{
+				return NotFound(new { message = "Erro ao criar plano" });
+			}
+
+			return CreatedAtAction(nameof(GetById), new { id = created.Id }, created);
+		}
 
 	[HttpPut("{id:int}")]
 	public async Task<ActionResult<CultivationPlan>> Update(

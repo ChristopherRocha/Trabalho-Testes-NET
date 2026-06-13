@@ -138,3 +138,4 @@ C:\Users\Usuario\Documents\Aulas IPV\Engenharia de Software2\Trabalho Testes NET
 C:\Users\Usuario\Documents\Aulas IPV\Engenharia de Software2\Trabalho Testes NET\GREENHERB\obj\Debug\net10.0\GREENHERB.pdb
 C:\Users\Usuario\Documents\Aulas IPV\Engenharia de Software2\Trabalho Testes NET\GREENHERB\obj\Debug\net10.0\GREENHERB.genruntimeconfig.cache
 C:\Users\Usuario\Documents\Aulas IPV\Engenharia de Software2\Trabalho Testes NET\GREENHERB\obj\Debug\net10.0\ref\GREENHERB.dll
+C:\Users\Usuario\Documents\Aulas IPV\Engenharia de Software2\Trabalho Testes NET\greenherb\obj\Debug\net10.0\GREENHERB.sourcelink.json

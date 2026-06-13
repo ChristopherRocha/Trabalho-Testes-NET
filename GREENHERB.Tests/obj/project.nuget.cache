@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jDoip3mF/VQ=",
+  "dgSpecHash": "rNTZ/fFZD/I=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Usuario\\Documents\\Aulas IPV\\Engenharia de Software2\\Trabalho Testes NET\\GREENHERB.Tests\\GREENHERB.Tests.csproj",
+  "projectFilePath": "C:\\Users\\Usuario\\Documents\\Aulas IPV\\Engenharia de Software2\\Trabalho Testes NET\\greenHerb.tests\\GREENHERB.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Usuario\\.nuget\\packages\\castle.core\\5.1.1\\castle.core.5.1.1.nupkg.sha512",
     "C:\\Users\\Usuario\\.nuget\\packages\\closedxml\\0.105.0\\closedxml.0.105.0.nupkg.sha512",

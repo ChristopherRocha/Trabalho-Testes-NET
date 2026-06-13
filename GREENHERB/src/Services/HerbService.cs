@@ -28,7 +28,12 @@ public class HerbService
 		_useMock = dbContext == null; // Usa mock se dbContext é null
 	}
 
-	public Task<List<Herb>> GetAllAsync()
+	// Construtor parameterless para compatibilidade com Moq (proxy generation)
+	public HerbService() : this(null)
+	{
+	}
+
+	public virtual Task<List<Herb>> GetAllAsync()
 	{
 		if (_useMock)
 			return Task.FromResult(MockDataProvider.GetAllHerbs());
@@ -38,7 +43,7 @@ public class HerbService
 			.ToListAsync();
 	}
 
-	public Task<bool> ExistsAsync(int herbId)
+	public virtual Task<bool> ExistsAsync(int herbId)
 	{
 		if (_useMock)
 			return Task.FromResult(MockDataProvider.GetHerbById(herbId) != null);
@@ -46,7 +51,7 @@ public class HerbService
 		return _dbContext!.Herbs.AnyAsync(h => h.Id == herbId);
 	}
 
-	public Task<Herb?> GetByIdAsync(int herbId)
+	public virtual Task<Herb?> GetByIdAsync(int herbId)
 	{
 		if (_useMock)
 			return Task.FromResult(MockDataProvider.GetHerbById(herbId));
@@ -57,7 +62,7 @@ public class HerbService
 			.FirstOrDefaultAsync(h => h.Id == herbId);
 	}
 
-	public async Task<Herb> CreateAsync(Herb herb)
+	public virtual async Task<Herb> CreateAsync(Herb herb)
 	{
 		if (_useMock)
 			return MockDataProvider.AddHerb(herb);
@@ -67,7 +72,7 @@ public class HerbService
 		return herb;
 	}
 
-	public async Task<Herb?> UpdateAsync(int herbId, Herb updated)
+	public virtual async Task<Herb?> UpdateAsync(int herbId, Herb updated)
 	{
 		if (_useMock)
 			return MockDataProvider.UpdateHerb(herbId, updated);
@@ -90,7 +95,7 @@ public class HerbService
 		return existing;
 	}
 
-	public async Task<bool> DeleteAsync(int herbId)
+	public virtual async Task<bool> DeleteAsync(int herbId)
 	{
 		if (_useMock)
 			return MockDataProvider.DeleteHerb(herbId);
@@ -106,7 +111,7 @@ public class HerbService
 		return true;
 	}
 
-	public async Task<HerbImportResult> ImportAsync(IFormFile file)
+	public virtual async Task<HerbImportResult> ImportAsync(IFormFile file)
 	{
 		var extension = Path.GetExtension(file.FileName).ToLowerInvariant();
 		var result = extension switch

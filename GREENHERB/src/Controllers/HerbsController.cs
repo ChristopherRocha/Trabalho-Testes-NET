@@ -131,7 +131,7 @@ public class HerbsController : ControllerBase
 		try
 		{
 			var result = await _herbService.ImportAsync(file);
-			return CreatedAtAction(nameof(GetAll), result);
+			return Ok(result);
 		}
 		catch (InvalidOperationException ex)
 		{

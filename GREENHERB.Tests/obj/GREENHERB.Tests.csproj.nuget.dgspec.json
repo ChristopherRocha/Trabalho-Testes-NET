@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Usuario\\Documents\\Aulas IPV\\Engenharia de Software2\\Trabalho Testes NET\\GREENHERB.Tests\\GREENHERB.Tests.csproj": {}
+    "C:\\Users\\Usuario\\Documents\\Aulas IPV\\Engenharia de Software2\\Trabalho Testes NET\\greenHerb.tests\\GREENHERB.Tests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Usuario\\Documents\\Aulas IPV\\Engenharia de Software2\\Trabalho Testes NET\\GREENHERB.Tests\\GREENHERB.Tests.csproj": {
+    "C:\\Users\\Usuario\\Documents\\Aulas IPV\\Engenharia de Software2\\Trabalho Testes NET\\greenHerb.tests\\GREENHERB.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Usuario\\Documents\\Aulas IPV\\Engenharia de Software2\\Trabalho Testes NET\\GREENHERB.Tests\\GREENHERB.Tests.csproj",
+        "projectUniqueName": "C:\\Users\\Usuario\\Documents\\Aulas IPV\\Engenharia de Software2\\Trabalho Testes NET\\greenHerb.tests\\GREENHERB.Tests.csproj",
         "projectName": "GREENHERB.Tests",
-        "projectPath": "C:\\Users\\Usuario\\Documents\\Aulas IPV\\Engenharia de Software2\\Trabalho Testes NET\\GREENHERB.Tests\\GREENHERB.Tests.csproj",
+        "projectPath": "C:\\Users\\Usuario\\Documents\\Aulas IPV\\Engenharia de Software2\\Trabalho Testes NET\\greenHerb.tests\\GREENHERB.Tests.csproj",
         "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Usuario\\Documents\\Aulas IPV\\Engenharia de Software2\\Trabalho Testes NET\\GREENHERB.Tests\\obj\\",
+        "outputPath": "C:\\Users\\Usuario\\Documents\\Aulas IPV\\Engenharia de Software2\\Trabalho Testes NET\\greenHerb.tests\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config"

@@ -37,6 +37,12 @@ public class AuthService : IAuthService
         _dbContext = dbContext;
     }
 
+    // Compatibilidade com testes: sobrecarga que aceita dicionário de users como segundo parâmetro
+    public AuthService(IConfiguration configuration, Dictionary<string, User> mockUsers)
+        : this(configuration, null, mockUsers)
+    {
+    }
+
     public async Task<AuthResponse?> AuthenticateAsync(string username, string password)
     {
         // Validações de entrada

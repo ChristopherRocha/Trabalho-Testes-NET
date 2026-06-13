@@ -76,7 +76,8 @@ public class MockTemperatureGateway : ITemperatureGateway
             return Enumerable.Empty<Measurement>();
         }
 
-        if (startTime >= endTime)
+        // Permitir start == end: deve retornar uma leitura única
+        if (startTime > endTime)
         {
             _logger.LogWarning("Intervalo de tempo inválido: {start} >= {end}", startTime, endTime);
             return Enumerable.Empty<Measurement>();

@@ -16,7 +16,12 @@ public class PlanService
 		_useMock = dbContext == null; // Usa mock se dbContext é null
 	}
 
-	public Task<List<CultivationPlan>> GetAllAsync(int herbId)
+	// Construtor parameterless para compatibilidade com Moq
+	public PlanService() : this(null)
+	{
+	}
+
+	public virtual Task<List<CultivationPlan>> GetAllAsync(int herbId)
 	{
 		if (_useMock)
 			return Task.FromResult(MockDataProvider.GetAllPlans(herbId));
@@ -27,7 +32,7 @@ public class PlanService
 			.ToListAsync();
 	}
 
-	public Task<CultivationPlan?> GetByIdAsync(int herbId, int planId)
+	public virtual Task<CultivationPlan?> GetByIdAsync(int herbId, int planId)
 	{
 		if (_useMock)
 		{
@@ -40,7 +45,7 @@ public class PlanService
 			.FirstOrDefaultAsync(p => p.HerbId == herbId && p.Id == planId);
 	}
 
-	public async Task<CultivationPlan> CreateAsync(int herbId, CultivationPlanRequest request)
+	public virtual async Task<CultivationPlan> CreateAsync(int herbId, CultivationPlanRequest request)
 	{
 		var plan = new CultivationPlan
 		{
@@ -59,7 +64,7 @@ public class PlanService
 		return plan;
 	}
 
-	public async Task<CultivationPlan?> UpdateAsync(int herbId, int planId, CultivationPlanRequest request)
+	public virtual async Task<CultivationPlan?> UpdateAsync(int herbId, int planId, CultivationPlanRequest request)
 	{
 		if (_useMock)
 		{
@@ -93,7 +98,7 @@ public class PlanService
 		return planDb;
 	}
 
-	public async Task<bool> DeleteAsync(int herbId, int planId)
+	public virtual async Task<bool> DeleteAsync(int herbId, int planId)
 	{
 		if (_useMock)
 		{

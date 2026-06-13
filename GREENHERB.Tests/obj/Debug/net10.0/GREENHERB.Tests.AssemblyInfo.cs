@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GREENHERB.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+db1ac8855dd01ece64340474f3fc1b6f9656b27b")]
 [assembly: System.Reflection.AssemblyProductAttribute("GREENHERB.Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GREENHERB.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,0 +1,409 @@
+req_id,req_title,module,test_case,level,technique,status
+REQ-07,Alertas,Alert,GetAllAsync_WithNoAlerts_ReturnsEmptyList,Unidade,Classe invalida,Ativo
+REQ-07,Alertas,Alert,GetAllAsync_WithMultipleAlerts_ReturnsAll,Unidade,Volume/colecao,Ativo
+REQ-07,Alertas,Alert,GetByIdAsync_WithValidId_ReturnsAlert,Unidade,Caminho principal,Ativo
+REQ-07,Alertas,Alert,GetByIdAsync_WithInvalidId_ReturnsNull,Unidade,Classe invalida,Ativo
+REQ-07,Alertas,Alert,CreateAsync_WithValidData_CreatesAlert,Unidade,Caminho principal,Ativo
+REQ-07,Alertas,Alert,CreateAsync_WithNullTitle_ReturnsNull,Unidade,Classe invalida,Ativo
+REQ-07,Alertas,Alert,UpdateAsync_WithValidData_UpdatesAlert,Unidade,Caminho principal,Ativo
+REQ-07,Alertas,Alert,DeleteAsync_WithValidId_DeletesAlert,Unidade,Caminho principal,Ativo
+REQ-07,Alertas,Alert,CreateAsync_WithAllAlertTypes_CreatesWithCorrectType (Informativo),Unidade,Decisao/estado,Ativo
+REQ-07,Alertas,Alert,CreateAsync_WithAllAlertTypes_CreatesWithCorrectType (Aviso),Unidade,Decisao/estado,Ativo
+REQ-07,Alertas,Alert,CreateAsync_WithAllAlertTypes_CreatesWithCorrectType (Crítico),Unidade,Decisao/estado,Ativo
+REQ-07,Alertas,Alert,GetByTypeAsync_WithValidType_ReturnsAlertsOfType,Unidade,Decisao/estado,Ativo
+REQ-07,Alertas,Alert,GetByTypeAsync_WithNoAlertsOfType_ReturnsEmptyList,Unidade,Classe invalida,Ativo
+REQ-07,Alertas,Alert,GetByTypeAsync_DifferentiatesBetweenTypes,Unidade,Decisao/estado,Ativo
+REQ-07,Alertas,Alert,CreateAsync_WithValidStatus_CreatesWithStatus (Ativo),Unidade,Decisao/estado,Ativo
+REQ-07,Alertas,Alert,CreateAsync_WithValidStatus_CreatesWithStatus (Resolvido),Unidade,Decisao/estado,Ativo
+REQ-07,Alertas,Alert,CreateAsync_WithValidStatus_CreatesWithStatus (Ignorado),Unidade,Decisao/estado,Ativo
+REQ-07,Alertas,Alert,GetByStatusAsync_ReturnsAlertsWithStatus,Unidade,Decisao/estado,Ativo
+REQ-07,Alertas,Alert,ResolveAsync_WithValidUser_MarksAlertResolved,Unidade,Decisao/estado,Ativo
+REQ-07,Alertas,Alert,ResolveAsync_WithNonExistentAlert_ReturnsNull,Unidade,Classe invalida,Ativo
+REQ-07,Alertas,Alert,ResolveAsync_WithoutResolution_StillMarksResolved,Unidade,Decisao/estado,Ativo
+REQ-07,Alertas,Alert,ResolveAsync_SetResolvedDate_AsCurrentTime,Unidade,Decisao/estado,Ativo
+REQ-07,Alertas,Alert,IgnoreAsync_WithValidUser_MarksAlertIgnored,Unidade,Decisao/estado,Ativo
+REQ-07,Alertas,Alert,IgnoreAsync_RequiresJustification_Stored,Unidade,Decisao/estado,Ativo
+REQ-07,Alertas,Alert,IgnoreAsync_WithNonExistentAlert_ReturnsNull,Unidade,Classe invalida,Ativo
+REQ-07,Alertas,Alert,GetByResourceIdAsync_ReturnsAlertsForResource,Unidade,Caminho principal,Ativo
+REQ-07,Alertas,Alert,GetByResourceIdAsync_WithNoAlertsForResource_ReturnsEmptyList,Unidade,Classe invalida,Ativo
+REQ-07,Alertas,Alert,CreateAlert_WhenTemperatureExceedsMax_GeneratesCriticalAlert,Unidade,Valor limite,Ativo
+REQ-07,Alertas,Alert,CreateAlert_WhenHumidityBelowMin_GeneratesWarningAlert,Unidade,Valor limite,Ativo
+REQ-07,Alertas,Alert,CreateAlert_WhenLuminosityBelowThreshold_GeneratesInfoAlert,Unidade,Valor limite,Ativo
+REQ-07,Alertas,Alert,ResolveAsync_OnAlreadyResolvedAlert_UpdatesResolution,Unidade,Decisao/estado,Ativo
+REQ-07,Alertas,Alert,GetByStatusAsync_MultipleFilters,Unidade,Decisao/estado,Ativo
+REQ-11,Auditoria,AuditLog,GetAllAsync_WithNoAuditLogs_ReturnsEmptyList,Unidade,Classe invalida,Ativo
+REQ-11,Auditoria,AuditLog,GetByIdAsync_WithValidId_ReturnsAuditLog,Unidade,Caminho principal,Ativo
+REQ-11,Auditoria,AuditLog,GetByIdAsync_WithInvalidId_ReturnsNull,Unidade,Classe invalida,Ativo
+REQ-11,Auditoria,AuditLog,LogOperationAsync_WithValidData_CreatesAuditLog,Unidade,Caminho principal,Ativo
+REQ-11,Auditoria,AuditLog,LogOperationAsync_WithOperationType_Stored (Create),Unidade,Decisao/estado,Ativo
+REQ-11,Auditoria,AuditLog,LogOperationAsync_WithOperationType_Stored (Update),Unidade,Decisao/estado,Ativo
+REQ-11,Auditoria,AuditLog,LogOperationAsync_WithOperationType_Stored (Delete),Unidade,Decisao/estado,Ativo
+REQ-11,Auditoria,AuditLog,LogOperationAsync_WithOperationType_Stored (Login),Unidade,Decisao/estado,Ativo
+REQ-11,Auditoria,AuditLog,LogOperationAsync_WithOperationType_Stored (Export),Unidade,Decisao/estado,Ativo
+REQ-11,Auditoria,AuditLog,GetByOperationTypeAsync_ReturnsLogsOfType,Unidade,Decisao/estado,Ativo
+REQ-11,Auditoria,AuditLog,GetByUserIdAsync_ReturnsLogsForUser,Unidade,Caminho principal,Ativo
+REQ-11,Auditoria,AuditLog,GetByUserIdAsync_WithMultipleUsers_OnlyReturnsUserLogs,Unidade,Volume/colecao,Ativo
+REQ-11,Auditoria,AuditLog,GetByEntityAsync_ReturnsLogsForEntity,Unidade,Caminho principal,Ativo
+REQ-11,Auditoria,AuditLog,GetByEntityAsync_WithDifferentEntities_OnlyReturnSpecificEntity,Unidade,Caminho principal,Ativo
+REQ-11,Auditoria,AuditLog,GetByDateRangeAsync_ReturnsLogsInRange,Unidade,Valor limite,Ativo
+REQ-11,Auditoria,AuditLog,GetByDateRangeAsync_WithNoLogsInRange_ReturnsEmptyList,Unidade,Valor limite,Ativo
+REQ-11,Auditoria,AuditLog,LogOperationAsync_WithOldAndNewValues_Stored,Unidade,Caminho principal,Ativo
+REQ-11,Auditoria,AuditLog,LogOperationAsync_UpdateWithoutOldValues_OnlyNewValuesSet,Unidade,Caminho principal,Ativo
+REQ-11,Auditoria,AuditLog,LogOperationAsync_WithIpAddress_Stored (127.0.0.1),Unidade,Caminho principal,Ativo
+REQ-11,Auditoria,AuditLog,LogOperationAsync_WithIpAddress_Stored (192.168.1.100),Unidade,Caminho principal,Ativo
+REQ-11,Auditoria,AuditLog,LogOperationAsync_WithIpAddress_Stored (10.0.0.1),Unidade,Caminho principal,Ativo
+REQ-11,Auditoria,AuditLog,LogOperationAsync_WithIpAddress_Stored (::1),Unidade,Caminho principal,Ativo
+REQ-11,Auditoria,AuditLog,DeleteOldLogsAsync_RemovesLogsBeforeDate,Unidade,Caminho principal,Ignorado
+REQ-11,Auditoria,AuditLog,DeleteOldLogsAsync_WithNoOldLogs_DoesNotDelete,Unidade,Caminho principal,Ativo
+REQ-11,Auditoria,AuditLog,GetAllAsync_WithLargeAuditLogCount,Unidade,Volume/colecao,Ativo
+REQ-11,Auditoria,AuditLog,LogOperationAsync_WithMultipleOperations_AllStored,Unidade,Volume/colecao,Ativo
+REQ-11,Auditoria,AuditLog,GetByOperationTypeAsync_CompleteAuditTrail,Unidade,Decisao/estado,Ativo
+REQ-01,Autenticacao e autorizacao,Auth,AuthenticateAsync_WithValidCredentials_ReturnsAuthResponse,Unidade,Caminho principal,Ativo
+REQ-01,Autenticacao e autorizacao,Auth,AuthenticateAsync_WithWrongPassword_ReturnsNull,Unidade,Classe invalida,Ativo
+REQ-01,Autenticacao e autorizacao,Auth,AuthenticateAsync_WithNonExistentUser_ReturnsNull,Unidade,Classe invalida,Ativo
+REQ-01,Autenticacao e autorizacao,Auth,AuthenticateAsync_WithInactiveUser_ReturnsNull,Unidade,Classe invalida,Ativo
+REQ-01,Autenticacao e autorizacao,Auth,AuthenticateAsync_WithEmptyUsername_ReturnsNull,Unidade,Classe invalida,Ativo
+REQ-01,Autenticacao e autorizacao,Auth,AuthenticateAsync_WithEmptyPassword_ReturnsNull,Unidade,Classe invalida,Ativo
+REQ-01,Autenticacao e autorizacao,Auth,RegisterAsync_WithValidData_ReturnsUser,Unidade,Caminho principal,Ativo
+REQ-01,Autenticacao e autorizacao,Auth,RegisterAsync_WithDuplicateUsername_ReturnsNull,Unidade,Classe invalida,Ativo
+REQ-01,Autenticacao e autorizacao,Auth,RegisterAsync_WithEmptyUsername_ReturnsNull,Unidade,Classe invalida,Ativo
+REQ-01,Autenticacao e autorizacao,Auth,RegisterAsync_WithEmptyEmail_ReturnsNull,Unidade,Classe invalida,Ativo
+REQ-01,Autenticacao e autorizacao,Auth,RegisterAsync_WithShortPassword_ReturnsNull,Unidade,Classe invalida,Ativo
+REQ-01,Autenticacao e autorizacao,Auth,RegisterAsync_WithInvalidEmail_ReturnsNull,Unidade,Classe invalida,Ativo
+REQ-01,Autenticacao e autorizacao,Auth,RegisterAsync_WithAllRoles_CreatesUserWithCorrectRole (UserRole.Tecnico),Unidade,Decisao/estado,Ativo
+REQ-01,Autenticacao e autorizacao,Auth,RegisterAsync_WithAllRoles_CreatesUserWithCorrectRole (UserRole.Responsavel),Unidade,Decisao/estado,Ativo
+REQ-01,Autenticacao e autorizacao,Auth,RegisterAsync_WithAllRoles_CreatesUserWithCorrectRole (UserRole.Administrador),Unidade,Valor limite,Ativo
+REQ-01,Autenticacao e autorizacao,Auth,AuthenticateAsync_TechnicoRole_ReturnsTokenWithCorrectRole,Unidade,Decisao/estado,Ativo
+REQ-01,Autenticacao e autorizacao,Auth,AuthenticateAsync_ResponsavelRole_ReturnsTokenWithCorrectRole,Unidade,Decisao/estado,Ativo
+REQ-01,Autenticacao e autorizacao,Auth,AuthenticateAsync_AdministradorRole_ReturnsTokenWithCorrectRole,Unidade,Valor limite,Ativo
+REQ-01,Autenticacao e autorizacao,Auth,"ValidatePasswordLength_UsesBoundaries (12345678, true)",Unidade,Valor limite,Ativo
+REQ-01,Autenticacao e autorizacao,Auth,"ValidatePasswordLength_UsesBoundaries (123456789, true)",Unidade,Valor limite,Ativo
+REQ-01,Autenticacao e autorizacao,Auth,"ValidatePasswordLength_UsesBoundaries (password123, true)",Unidade,Valor limite,Ativo
+REQ-01,Autenticacao e autorizacao,Auth,"ValidatePasswordLength_UsesBoundaries (1234567, false)",Unidade,Valor limite,Ativo
+REQ-01,Autenticacao e autorizacao,Auth,"ValidatePasswordLength_UsesBoundaries (, false)",Unidade,Valor limite,Ativo
+REQ-01,Autenticacao e autorizacao,Auth,"ValidatePasswordLength_UsesBoundaries (abc, false)",Unidade,Valor limite,Ativo
+REQ-01,Autenticacao e autorizacao,Auth,ValidatePasswordLength_WithNullPassword_ReturnsFalse,Unidade,Valor limite,Ativo
+REQ-01,Autenticacao e autorizacao,Auth,"ValidateEmailFormat_ValidatesPattern (user@example.com, true)",Unidade,Caminho principal,Ativo
+REQ-01,Autenticacao e autorizacao,Auth,"ValidateEmailFormat_ValidatesPattern (test.user@domain.co.uk, true)",Unidade,Caminho principal,Ativo
+REQ-01,Autenticacao e autorizacao,Auth,"ValidateEmailFormat_ValidatesPattern (user+tag@example.com, true)",Unidade,Caminho principal,Ativo
+REQ-01,Autenticacao e autorizacao,Auth,"ValidateEmailFormat_ValidatesPattern (userexample.com, false)",Unidade,Classe invalida,Ativo
+REQ-01,Autenticacao e autorizacao,Auth,"ValidateEmailFormat_ValidatesPattern (user@, false)",Unidade,Classe invalida,Ativo
+REQ-01,Autenticacao e autorizacao,Auth,"ValidateEmailFormat_ValidatesPattern (@example.com, false)",Unidade,Classe invalida,Ativo
+REQ-01,Autenticacao e autorizacao,Auth,"ValidateEmailFormat_ValidatesPattern (user@.com, false)",Unidade,Classe invalida,Ativo
+REQ-01,Autenticacao e autorizacao,Auth,"ValidateEmailFormat_ValidatesPattern (, false)",Unidade,Classe invalida,Ativo
+REQ-01,Autenticacao e autorizacao,Auth,ValidateEmailFormat_WithNullEmail_ReturnsFalse,Unidade,Classe invalida,Ativo
+REQ-01,Autenticacao e autorizacao,Auth,ValidateToken_WithInvalidToken_ReturnsFalse,Unidade,Classe invalida,Ativo
+REQ-01,Autenticacao e autorizacao,Auth,ValidateToken_WithEmptyToken_ReturnsFalse,Unidade,Classe invalida,Ativo
+REQ-01,Autenticacao e autorizacao,Auth,ValidateToken_WithNullToken_ReturnsFalse,Unidade,Classe invalida,Ativo
+REQ-01,Autenticacao e autorizacao,Auth,ValidateToken_WithValidTokenFromAuth_ReturnsTrue,Unidade,Caminho principal,Ativo
+REQ-01,Autenticacao e autorizacao,Auth,ValidateToken_WithMalformedToken_ReturnsFalse,Unidade,Classe invalida,Ativo
+REQ-01,Autenticacao e autorizacao,Auth,RenewTokenAsync_WithValidToken_ReturnsNewToken,Unidade,Caminho principal,Ativo
+REQ-01,Autenticacao e autorizacao,Auth,RenewTokenAsync_WithInvalidToken_ReturnsNull,Unidade,Classe invalida,Ativo
+REQ-01,Autenticacao e autorizacao,Auth,AuthenticateAsync_CaseSensitive_WithDifferentCase_ReturnsNull,Unidade,Classe invalida,Ativo
+REQ-01,Autenticacao e autorizacao,Auth,RegisterAsync_MultipleUsersWithDifferentRoles,Unidade,Decisao/estado,Ativo
+REQ-01,Autenticacao e autorizacao,Auth,ValidatePasswordLength_WithSpecialCharacters_StillValidatesLength,Unidade,Valor limite,Ativo
+REQ-01,Autenticacao e autorizacao,Auth,AuthenticateAsync_WithWhitespaceInPassword_TreatsAsPartOfPassword,Unidade,Caminho principal,Ativo
+REQ-08,Automacoes,Automation,GetAllAsync_WithNoAutomations_ReturnsEmptyList,Unidade,Classe invalida,Ativo
+REQ-08,Automacoes,Automation,GetAllAsync_WithMultipleAutomations_ReturnsAll,Unidade,Volume/colecao,Ativo
+REQ-08,Automacoes,Automation,GetByIdAsync_WithValidId_ReturnsAutomation,Unidade,Caminho principal,Ativo
+REQ-08,Automacoes,Automation,CreateAsync_WithValidData_CreatesAutomation,Unidade,Caminho principal,Ativo
+REQ-08,Automacoes,Automation,UpdateAsync_WithValidData_UpdatesAutomation,Unidade,Caminho principal,Ativo
+REQ-08,Automacoes,Automation,DeleteAsync_WithValidId_DeletesAutomation,Unidade,Caminho principal,Ativo
+REQ-08,Automacoes,Automation,CreateAsync_WithManualMode_SetsOperationModeCorrectly,Unidade,Decisao/estado,Ativo
+REQ-08,Automacoes,Automation,CreateAsync_WithAutomaticMode_SetsOperationModeCorrectly,Unidade,Decisao/estado,Ativo
+REQ-08,Automacoes,Automation,UpdateAsync_ChangeFromManualToAutomatic,Unidade,Caminho principal,Ativo
+REQ-08,Automacoes,Automation,UpdateAsync_ChangeFromAutomaticToManual,Unidade,Caminho principal,Ativo
+REQ-08,Automacoes,Automation,ActivateAsync_WithInactiveAutomation_Activates,Unidade,Decisao/estado,Ativo
+REQ-08,Automacoes,Automation,DeactivateAsync_WithActiveAutomation_Deactivates,Unidade,Decisao/estado,Ativo
+REQ-08,Automacoes,Automation,ActivateAsync_WithAlreadyActiveAutomation_RemainActive,Unidade,Decisao/estado,Ativo
+REQ-08,Automacoes,Automation,DeactivateAsync_WithNonExistentAutomation_ReturnsNull,Unidade,Classe invalida,Ativo
+REQ-08,Automacoes,Automation,GetByBatchIdAsync_ReturnAutomationsForBatch,Unidade,Volume/colecao,Ativo
+REQ-08,Automacoes,Automation,GetByBatchIdAsync_WithDifferentBatches_ReturnsOnlyForSpecificBatch,Unidade,Volume/colecao,Ativo
+REQ-08,Automacoes,Automation,GetActiveAsync_ReturnsOnlyActiveAutomations,Unidade,Caminho principal,Ativo
+REQ-08,Automacoes,Automation,GetActiveAsync_WithNoActiveAutomations_ReturnsEmptyList,Unidade,Classe invalida,Ativo
+REQ-08,Automacoes,Automation,CreateAsync_WithTemperatureTrigger_StoresCondition,Unidade,Decisao/estado,Ativo
+REQ-08,Automacoes,Automation,CreateAsync_WithHumidityTrigger_StoresCondition,Unidade,Decisao/estado,Ativo
+REQ-08,Automacoes,Automation,UpdateAsync_ChangeTriggerCondition,Unidade,Decisao/estado,Ativo
+REQ-08,Automacoes,Automation,CreateAsync_WithNullTriggerCondition_ReturnsNull,Unidade,Classe invalida,Ignorado
+REQ-08,Automacoes,Automation,GetByBatchIdAsync_WithMultipleAutomations_LargeCount,Unidade,Volume/colecao,Ativo
+REQ-08,Automacoes,Automation,ActivateDeactivateSequence_Works,Unidade,Decisao/estado,Ativo
+REQ-05,Lotes operacionais,Batch,GetAllAsync_WithNoBatches_ReturnsEmptyList,Unidade,Classe invalida,Ativo
+REQ-05,Lotes operacionais,Batch,GetAllAsync_WithMultipleBatches_ReturnsAll,Unidade,Volume/colecao,Ativo
+REQ-05,Lotes operacionais,Batch,GetByIdAsync_WithValidId_ReturnsBatch,Unidade,Volume/colecao,Ativo
+REQ-05,Lotes operacionais,Batch,GetByIdAsync_WithInvalidId_ReturnsNull,Unidade,Classe invalida,Ativo
+REQ-05,Lotes operacionais,Batch,CreateAsync_WithValidData_CreatesBatch,Unidade,Volume/colecao,Ativo
+REQ-05,Lotes operacionais,Batch,CreateAsync_WithInvalidPlanId_ReturnsNull,Unidade,Classe invalida,Ativo
+REQ-05,Lotes operacionais,Batch,UpdateAsync_WithValidData_UpdatesBatch,Unidade,Volume/colecao,Ativo
+REQ-05,Lotes operacionais,Batch,UpdateAsync_WithNonExistentBatch_ReturnsNull,Unidade,Classe invalida,Ativo
+REQ-05,Lotes operacionais,Batch,DeleteAsync_WithValidId_DeletesBatch,Unidade,Volume/colecao,Ativo
+REQ-05,Lotes operacionais,Batch,DeleteAsync_WithInvalidId_ReturnsFalse,Unidade,Classe invalida,Ativo
+REQ-05,Lotes operacionais,Batch,GetByPlanIdAsync_WithValidPlanId_ReturnsBatchesForPlan,Unidade,Volume/colecao,Ativo
+REQ-05,Lotes operacionais,Batch,GetByPlanIdAsync_WithInvalidPlanId_ReturnsEmptyList,Unidade,Classe invalida,Ativo
+REQ-05,Lotes operacionais,Batch,GetByPlanIdAsync_WithMultiplePlans_ReturnsBatchesForSpecificPlan,Unidade,Volume/colecao,Ativo
+REQ-05,Lotes operacionais,Batch,CreateAsync_WithValidStatus_CreatesWithCorrectStatus (Ativo),Unidade,Decisao/estado,Ativo
+REQ-05,Lotes operacionais,Batch,CreateAsync_WithValidStatus_CreatesWithCorrectStatus (Encerrado),Unidade,Decisao/estado,Ativo
+REQ-05,Lotes operacionais,Batch,CreateAsync_WithValidStatus_CreatesWithCorrectStatus (Suspenso),Unidade,Decisao/estado,Ativo
+REQ-05,Lotes operacionais,Batch,UpdateAsync_ChangeStatus_FromAtivoToEncerrado,Unidade,Decisao/estado,Ativo
+REQ-05,Lotes operacionais,Batch,UpdateAsync_ChangeStatus_FromAtivoToSuspenso,Unidade,Decisao/estado,Ativo
+REQ-05,Lotes operacionais,Batch,CreateAsync_WithLossPercentage_StoredCorrectly,Unidade,Caminho principal,Ativo
+REQ-05,Lotes operacionais,Batch,CreateAsync_WithPartialDivisions_StoredCorrectly,Unidade,Caminho principal,Ativo
+REQ-05,Lotes operacionais,Batch,UpdateAsync_IncreaseProductivity_Successful,Unidade,Caminho principal,Ativo
+REQ-05,Lotes operacionais,Batch,UpdateAsync_RecordLosses_Successful,Unidade,Caminho principal,Ativo
+REQ-05,Lotes operacionais,Batch,CreateAsync_WithLossPercentageZero_Allowed,Unidade,Valor limite,Ativo
+REQ-05,Lotes operacionais,Batch,CreateAsync_WithHighProductivity_Allowed,Unidade,Volume/colecao,Ativo
+REQ-05,Lotes operacionais,Batch,CreateAsync_WithZeroDivisions_Allowed,Unidade,Valor limite,Ativo
+REQ-05,Lotes operacionais,Batch,DeleteAsync_BatchWithoutTasks_DeletesSuccessfully,Unidade,Volume/colecao,Ativo
+REQ-05,Lotes operacionais,Batch,GetByIdAsync_LoadsBatchWithPlan,Unidade,Volume/colecao,Ativo
+REQ-05,Lotes operacionais,Batch,CreateAsync_WithNullName_ReturnsNull,Unidade,Classe invalida,Ativo
+REQ-05,Lotes operacionais,Batch,GetAllAsync_WithLargeBatchCount_ReturnsAll,Unidade,Volume/colecao,Ativo
+REQ-05,Lotes operacionais,Batch,UpdateAsync_MultipleUpdates_AllApplied,Unidade,Volume/colecao,Ativo
+REQ-03,Catalogo botanico,Herb,ImportCsv_WithValidRows_ImportsAndUpdates,Unidade,Caminho principal,Ativo
+REQ-03,Catalogo botanico,Herb,ImportCsv_WithEmptyFile_ReturnsBadRequest,Unidade,Classe invalida,Ativo
+REQ-03,Catalogo botanico,Herb,ImportCsv_WithInvalidCycleDays_ReturnsError,Unidade,Classe invalida,Ativo
+REQ-03,Catalogo botanico,Herb,ImportCsv_WithDuplicateHerbs_UpdatesExisting,Unidade,Caminho principal,Ativo
+REQ-03,Catalogo botanico,Herb,ImportXlsx_WithEmptySheet_ReturnsBadRequest,Unidade,Classe invalida,Ativo
+REQ-03,Catalogo botanico,Herb,ImportXlsx_WithInvalidCycleDays_ReturnsError,Unidade,Classe invalida,Ativo
+REQ-03,Catalogo botanico,Herb,GetHerb_ById_ReturnsHerb,Unidade,Caminho principal,Ativo
+REQ-03,Catalogo botanico,Herb,GetHerb_ByInvalidId_ReturnsNotFound,Unidade,Classe invalida,Ativo
+REQ-03,Catalogo botanico,Herb,GetAllHerbs_ReturnsAll,Unidade,Volume/colecao,Ativo
+REQ-03,Catalogo botanico,Herb,CreateHerb_WithValidData_CreatesHerb,Unidade,Caminho principal,Ativo
+REQ-03,Catalogo botanico,Herb,CreateHerb_WithMissingName_ReturnsBadRequest,Unidade,Classe invalida,Ativo
+REQ-03,Catalogo botanico,Herb,UpdateHerb_WithValidData_UpdatesHerb,Unidade,Caminho principal,Ativo
+REQ-03,Catalogo botanico,Herb,UpdateHerb_WithInvalidId_ReturnsNotFound,Unidade,Classe invalida,Ativo
+REQ-03,Catalogo botanico,Herb,DeleteHerb_WithValidId_DeletesHerb,Unidade,Caminho principal,Ativo
+REQ-03,Catalogo botanico,Herb,DeleteHerb_WithInvalidId_ReturnsNotFound,Unidade,Classe invalida,Ativo
+REQ-03,Catalogo botanico,Herb,CreateHerb_WithNegativeCycleDays_ReturnsBadRequest,Unidade,Valor limite,Ativo
+REQ-03,Catalogo botanico,Herb,CreateHerb_WithLongName_ReturnsBadRequest,Unidade,Classe invalida,Ignorado
+REQ-03,Catalogo botanico,Herb,UpdateHerb_WithNullName_ReturnsBadRequest,Unidade,Classe invalida,Ativo
+REQ-03,Catalogo botanico,Herb,GetHerbs_ByCategory_ReturnsFiltered,Unidade,Caminho principal,Ativo
+REQ-03,Catalogo botanico,Herb,GetHerbs_ByOrigin_ReturnsFiltered,Unidade,Caminho principal,Ativo
+REQ-03,Catalogo botanico,Herb,CreateHerb_WithNullScientificName_ReturnsBadRequest,Unidade,Classe invalida,Ativo
+REQ-03,Catalogo botanico,Herb,CreateHerb_WithNullCategory_ReturnsBadRequest,Unidade,Classe invalida,Ativo
+REQ-03,Catalogo botanico,Herb,CreateHerb_WithNullOrigin_ReturnsBadRequest,Unidade,Classe invalida,Ativo
+REQ-03,Catalogo botanico,Herb,CreateHerb_WithZeroCycleDays_ReturnsBadRequest,Unidade,Valor limite,Ativo
+REQ-03,Catalogo botanico,Herb,UpdateHerb_WithNegativeCycleDays_ReturnsBadRequest,Unidade,Valor limite,Ativo
+REQ-03,Catalogo botanico,Herb,UpdateHerb_WithNullCategory_ReturnsBadRequest,Unidade,Classe invalida,Ativo
+REQ-03,Catalogo botanico,Herb,UpdateHerb_WithNullOrigin_ReturnsBadRequest,Unidade,Classe invalida,Ativo
+REQ-03,Catalogo botanico,Herb,UpdateHerb_WithZeroCycleDays_ReturnsBadRequest,Unidade,Valor limite,Ativo
+REQ-03,Catalogo botanico,Herb,ImportCsv_WithMissingColumns_ReturnsBadRequest,Unidade,Classe invalida,Ativo
+REQ-03,Catalogo botanico,Herb,ImportXlsx_WithValidRows_Imports,Unidade,Caminho principal,Ativo
+REQ-03,Catalogo botanico,Herb,ImportXlsx_WithMissingColumns_ReturnsBadRequest,Unidade,Classe invalida,Ativo
+REQ-03,Catalogo botanico,Herb,CreatePlan_WithValidRequest_CreatesPlan,Unidade,Caminho principal,Ativo
+REQ-03,Catalogo botanico,Herb,CreatePlan_WithInvalidRequest_ReturnsBadRequest,Unidade,Classe invalida,Ignorado
+REQ-03,Catalogo botanico,Herb,CreatePlan_With_InexistentHerb_ReturnsNotFound,Unidade,Classe invalida,Ignorado
+REQ-06,Telemetria ambiental,Measurement,GetAllAsync_WithNoMeasurements_ReturnsEmptyList,Unidade,Classe invalida,Ativo
+REQ-06,Telemetria ambiental,Measurement,GetByIdAsync_WithValidId_ReturnsMeasurement,Unidade,Caminho principal,Ativo
+REQ-06,Telemetria ambiental,Measurement,CreateAsync_WithValidData_CreatesMeasurement,Unidade,Caminho principal,Ativo
+REQ-06,Telemetria ambiental,Measurement,CreateAsync_WithInvalidBatchId_ReturnsNull,Unidade,Classe invalida,Ativo
+REQ-06,Telemetria ambiental,Measurement,DeleteAsync_WithValidId_DeletesMeasurement,Unidade,Caminho principal,Ativo
+REQ-06,Telemetria ambiental,Measurement,GetByBatchIdAsync_ReturnsMeasurementsForBatch,Unidade,Volume/colecao,Ativo
+REQ-06,Telemetria ambiental,Measurement,GetByBatchIdAsync_WithMultipleBatches_OnlyReturnsBatchMeasurements,Unidade,Volume/colecao,Ativo
+REQ-06,Telemetria ambiental,Measurement,CreateAsync_WithTemperatureInRange_Stored,Unidade,Valor limite,Ativo
+REQ-06,Telemetria ambiental,Measurement,CreateAsync_WithVariousTemperatures_Stored (-50),Unidade,Valor limite,Ativo
+REQ-06,Telemetria ambiental,Measurement,CreateAsync_WithVariousTemperatures_Stored (0),Unidade,Valor limite,Ativo
+REQ-06,Telemetria ambiental,Measurement,CreateAsync_WithVariousTemperatures_Stored (15),Unidade,Valor limite,Ativo
+REQ-06,Telemetria ambiental,Measurement,CreateAsync_WithVariousTemperatures_Stored (25),Unidade,Valor limite,Ativo
+REQ-06,Telemetria ambiental,Measurement,CreateAsync_WithVariousTemperatures_Stored (50),Unidade,Valor limite,Ativo
+REQ-06,Telemetria ambiental,Measurement,CreateAsync_WithVariousTemperatures_Stored (60),Unidade,Valor limite,Ativo
+REQ-06,Telemetria ambiental,Measurement,CreateAsync_WithVariousHumidity_Stored (0),Unidade,Valor limite,Ativo
+REQ-06,Telemetria ambiental,Measurement,CreateAsync_WithVariousHumidity_Stored (50),Unidade,Valor limite,Ativo
+REQ-06,Telemetria ambiental,Measurement,CreateAsync_WithVariousHumidity_Stored (70),Unidade,Valor limite,Ativo
+REQ-06,Telemetria ambiental,Measurement,CreateAsync_WithVariousHumidity_Stored (100),Unidade,Valor limite,Ativo
+REQ-06,Telemetria ambiental,Measurement,CreateAsync_WithLowHumidity_Stored,Unidade,Caminho principal,Ativo
+REQ-06,Telemetria ambiental,Measurement,CreateAsync_WithVariousLuminosity_Stored (0),Unidade,Valor limite,Ativo
+REQ-06,Telemetria ambiental,Measurement,CreateAsync_WithVariousLuminosity_Stored (1000),Unidade,Valor limite,Ativo
+REQ-06,Telemetria ambiental,Measurement,CreateAsync_WithVariousLuminosity_Stored (5000),Unidade,Valor limite,Ativo
+REQ-06,Telemetria ambiental,Measurement,CreateAsync_WithVariousLuminosity_Stored (10000),Unidade,Valor limite,Ativo
+REQ-06,Telemetria ambiental,Measurement,CreateAsync_WithLowLuminosity_Stored,Unidade,Valor limite,Ativo
+REQ-06,Telemetria ambiental,Measurement,GetByBatchAndDateRangeAsync_ReturnsCorrectMeasurements,Unidade,Valor limite,Ativo
+REQ-06,Telemetria ambiental,Measurement,GetByBatchAndDateRangeAsync_WithNoMeasurements_ReturnsEmptyList,Unidade,Valor limite,Ativo
+REQ-06,Telemetria ambiental,Measurement,GetByBatchAndDateRangeAsync_OutsideDateRange_ReturnsNothing,Unidade,Valor limite,Ativo
+REQ-06,Telemetria ambiental,Measurement,CreateAsync_WithMeasurementDateTime_Stored,Unidade,Caminho principal,Ativo
+REQ-06,Telemetria ambiental,Measurement,CreateAsync_SetCreatedAtToNow,Unidade,Caminho principal,Ativo
+REQ-06,Telemetria ambiental,Measurement,GetAllAsync_WithLargeMeasurementCount,Unidade,Volume/colecao,Ativo
+REQ-06,Telemetria ambiental,Measurement,CreateAsync_WithExtremeTemperatures,Unidade,Caminho principal,Ativo
+REQ-XX,Cobertura complementar,Notification,SendEmailNotificationAsync_WithValidData_ReturnsTrue,Unidade,Caminho principal,Ativo
+REQ-XX,Cobertura complementar,Notification,SendEmailNotificationAsync_WithValidData_LogsNotification,Unidade,Caminho principal,Ativo
+REQ-XX,Cobertura complementar,Notification,SendEmailNotificationAsync_WithEmptyEmail_ReturnsFalse,Unidade,Classe invalida,Ativo
+REQ-XX,Cobertura complementar,Notification,SendEmailNotificationAsync_WithEmptyEmail_ReturnsFalse (   ),Unidade,Classe invalida,Ativo
+REQ-XX,Cobertura complementar,Notification,SendEmailNotificationAsync_WhenServiceUnavailable_ReturnsFalse,Unidade,Classe invalida,Ativo
+REQ-XX,Cobertura complementar,Notification,SendEmailNotificationAsync_WhenServiceUnavailable_LogsFailure,Unidade,Caminho principal,Ativo
+REQ-XX,Cobertura complementar,Notification,SendSmsNotificationAsync_WithValidPhoneNumber_ReturnsTrue,Unidade,Caminho principal,Ativo
+REQ-XX,Cobertura complementar,Notification,SendSmsNotificationAsync_WithValidPhoneNumber_LogsNotification,Unidade,Caminho principal,Ativo
+REQ-XX,Cobertura complementar,Notification,SendSmsNotificationAsync_WithEmptyPhone_ReturnsFalse,Unidade,Classe invalida,Ativo
+REQ-XX,Cobertura complementar,Notification,SendSmsNotificationAsync_WithEmptyPhone_ReturnsFalse (   ),Unidade,Classe invalida,Ativo
+REQ-XX,Cobertura complementar,Notification,SendSmsNotificationAsync_WithInvalidPhoneLength_ReturnsFalse (123),Unidade,Valor limite,Ativo
+REQ-XX,Cobertura complementar,Notification,SendSmsNotificationAsync_WithInvalidPhoneLength_ReturnsFalse (12345),Unidade,Valor limite,Ativo
+REQ-XX,Cobertura complementar,Notification,SendSmsNotificationAsync_WhenServiceUnavailable_ReturnsFalse,Unidade,Classe invalida,Ativo
+REQ-XX,Cobertura complementar,Notification,SendPushNotificationAsync_WithValidUserId_ReturnsTrue,Unidade,Caminho principal,Ativo
+REQ-XX,Cobertura complementar,Notification,SendPushNotificationAsync_WithValidUserId_LogsNotification,Unidade,Caminho principal,Ativo
+REQ-XX,Cobertura complementar,Notification,SendPushNotificationAsync_WithInvalidUserId_ReturnsFalse (0),Unidade,Classe invalida,Ativo
+REQ-XX,Cobertura complementar,Notification,SendPushNotificationAsync_WithInvalidUserId_ReturnsFalse (-1),Unidade,Classe invalida,Ativo
+REQ-XX,Cobertura complementar,Notification,SendPushNotificationAsync_WithInvalidUserId_ReturnsFalse (-100),Unidade,Classe invalida,Ativo
+REQ-XX,Cobertura complementar,Notification,SendPushNotificationAsync_WhenServiceUnavailable_ReturnsFalse,Unidade,Classe invalida,Ativo
+REQ-XX,Cobertura complementar,Notification,SendBatchAlertAsync_WithValidData_ReturnsTrue,Unidade,Volume/colecao,Ativo
+REQ-XX,Cobertura complementar,Notification,SendBatchAlertAsync_WithValidData_LogsNotification,Unidade,Volume/colecao,Ativo
+REQ-XX,Cobertura complementar,Notification,SendBatchAlertAsync_WithInvalidBatchId_ReturnsFalse (0),Unidade,Classe invalida,Ativo
+REQ-XX,Cobertura complementar,Notification,SendBatchAlertAsync_WithInvalidBatchId_ReturnsFalse (-1),Unidade,Classe invalida,Ativo
+REQ-XX,Cobertura complementar,Notification,SendBatchAlertAsync_WithEmptyAlertType_ReturnsFalse,Unidade,Classe invalida,Ativo
+REQ-XX,Cobertura complementar,Notification,SendBatchAlertAsync_WithEmptyAlertType_ReturnsFalse (   ),Unidade,Classe invalida,Ativo
+REQ-XX,Cobertura complementar,Notification,SendBatchAlertAsync_WhenServiceUnavailable_ReturnsFalse,Unidade,Classe invalida,Ativo
+REQ-XX,Cobertura complementar,Notification,IsServiceAvailableAsync_DefaultState_ReturnsTrue,Unidade,Caminho principal,Ativo
+REQ-XX,Cobertura complementar,Notification,IsServiceAvailableAsync_AfterSetUnavailable_ReturnsFalse,Unidade,Classe invalida,Ativo
+REQ-XX,Cobertura complementar,Notification,IsServiceAvailableAsync_AfterSetAvailable_ReturnsTrue,Unidade,Caminho principal,Ativo
+REQ-XX,Cobertura complementar,Notification,GetSentNotificationsAsync_WithNoNotifications_ReturnsEmpty,Unidade,Classe invalida,Ativo
+REQ-XX,Cobertura complementar,Notification,GetSentNotificationsAsync_AfterSendingNotifications_ReturnsAll,Unidade,Volume/colecao,Ativo
+REQ-XX,Cobertura complementar,Notification,GetSentNotificationsAsync_WithLimit_Respects_MaxResults,Unidade,Valor limite,Ativo
+REQ-XX,Cobertura complementar,Notification,GetSentNotificationsAsync_ReturnsInReverseChronological_Order,Unidade,Caminho principal,Ativo
+REQ-XX,Cobertura complementar,Notification,GetSuccessfulNotificationCount_WithOnlySuccessfulNotifications_ReturnsCorrectCount,Unidade,Volume/colecao,Ativo
+REQ-XX,Cobertura complementar,Notification,GetFailedNotificationCount_WithMixedResults_ReturnsOnlyFailed,Unidade,Volume/colecao,Ativo
+REQ-XX,Cobertura complementar,Notification,ClearNotificationHistory_RemovesAllNotifications,Unidade,Volume/colecao,Ativo
+REQ-XX,Cobertura complementar,Notification,Reset_RestoresDefaultState,Unidade,Caminho principal,Ativo
+REQ-XX,Cobertura complementar,Notification,MultipleNotificationTypes_AllTrackedCorrectly,Unidade,Decisao/estado,Ativo
+REQ-XX,Cobertura complementar,Notification,ServiceRecovery_AfterBecomingUnavailable,Unidade,Valor limite,Ativo
+REQ-04,Planos de cultivo,Plan,TU-261: Plan nulo → BadRequest,Unidade,Classe invalida,Ignorado
+REQ-04,Planos de cultivo,Plan,"TU-262: Dec2 [C1=T, C2=T] plan.HerbId=-1 AND herbId=0",Unidade,Caminho principal,Ignorado
+REQ-04,Planos de cultivo,Plan,"TU-263: Dec2 [C1=T, C2=F] plan.HerbId=0 AND herbId=5",Unidade,Caminho principal,Ignorado
+REQ-04,Planos de cultivo,Plan,"TU-264: Dec2 [C1=F, C2=T] plan.HerbId=3 AND herbId=0",Unidade,Caminho principal,Ignorado
+REQ-04,Planos de cultivo,Plan,"TU-265: Dec2 [C1=F, C2=F] plan.HerbId=2 AND herbId=7",Unidade,Caminho principal,Ignorado
+REQ-04,Planos de cultivo,Plan,TU-271: Dec2 Boundary plan.HerbId=0 AND herbId=0,Unidade,Valor limite,Ignorado
+REQ-04,Planos de cultivo,Plan,TU-266: Dec3 [T] herbId=5 sobrescreve,Unidade,Caminho principal,Ignorado
+REQ-04,Planos de cultivo,Plan,TU-267: Dec3 [F] herbId=0 não sobrescreve,Unidade,Caminho principal,Ignorado
+REQ-04,Planos de cultivo,Plan,TU-268: Dec4 [T] DurationDays=0 Boundary,Unidade,Valor limite,Ignorado
+REQ-04,Planos de cultivo,Plan,TU-269: Dec4 [T] DurationDays=-10 Negativo,Unidade,Caminho principal,Ignorado
+REQ-04,Planos de cultivo,Plan,TU-270: Dec4 [F] DurationDays=1 Boundary válido,Unidade,Valor limite,Ignorado
+REQ-04,Planos de cultivo,Plan,TU-272: Dec4 [F] DurationDays=60 Valor típico,Unidade,Caminho principal,Ignorado
+REQ-04,Planos de cultivo,Plan,TU-273: Dec5 [T] StartDate=default (null),Unidade,Classe invalida,Ignorado
+REQ-04,Planos de cultivo,Plan,TU-274: Dec5 [T] StartDate no passado,Unidade,Caminho principal,Ignorado
+REQ-04,Planos de cultivo,Plan,TU-275: Dec5 [F] StartDate válida (agora),Unidade,Caminho principal,Ignorado
+REQ-04,Planos de cultivo,Plan,TU-276: Dec5 [F] StartDate no futuro,Unidade,Caminho principal,Ignorado
+REQ-04,Planos de cultivo,Plan,TU-277: Dec6 [T] WateringFrequencyDays=0 Boundary,Unidade,Valor limite,Ignorado
+REQ-04,Planos de cultivo,Plan,TU-278: Dec6 [T] WateringFrequencyDays=-5 Negativo,Unidade,Caminho principal,Ignorado
+REQ-04,Planos de cultivo,Plan,TU-279: Dec6 [F] WateringFrequencyDays=1 Boundary válido,Unidade,Valor limite,Ignorado
+REQ-04,Planos de cultivo,Plan,TU-280: Dec6 [F] WateringFrequencyDays=7 Valor típico,Unidade,Caminho principal,Ignorado
+REQ-04,Planos de cultivo,Plan,TU-287: Dec7 [T] TemperatureMin=-100 (abaixo do mínimo),Unidade,Valor limite,Ignorado
+REQ-04,Planos de cultivo,Plan,TU-288: Dec7 [T] TemperatureMax=100 (acima do máximo),Unidade,Valor limite,Ignorado
+REQ-04,Planos de cultivo,Plan,TU-289: Dec7 [T] TemperatureMin > TemperatureMax,Unidade,Valor limite,Ignorado
+REQ-04,Planos de cultivo,Plan,TU-290: Dec7 [F] Temperatura válida (-50 a 60),Unidade,Caminho principal,Ignorado
+REQ-04,Planos de cultivo,Plan,TU-291: Dec7 [F] Temperatura típica (15-30),Unidade,Caminho principal,Ignorado
+REQ-04,Planos de cultivo,Plan,TU-292: Dec8 [T] HumidityMin=-10 (negativo),Unidade,Valor limite,Ignorado
+REQ-04,Planos de cultivo,Plan,TU-293: Dec8 [T] HumidityMax=150 (acima de 100),Unidade,Valor limite,Ignorado
+REQ-04,Planos de cultivo,Plan,TU-294: Dec8 [T] HumidityMin > HumidityMax,Unidade,Valor limite,Ignorado
+REQ-04,Planos de cultivo,Plan,TU-295: Dec8 [F] Umidade válida (0-100),Unidade,Caminho principal,Ignorado
+REQ-04,Planos de cultivo,Plan,TU-296: Dec8 [F] Umidade típica (40-80),Unidade,Caminho principal,Ignorado
+REQ-04,Planos de cultivo,Plan,TU-297: Dec9 [T] LuminosityMin=-100 (negativo),Unidade,Valor limite,Ignorado
+REQ-04,Planos de cultivo,Plan,TU-298: Dec9 [T] LuminosityMax=200000 (acima do máximo),Unidade,Valor limite,Ignorado
+REQ-04,Planos de cultivo,Plan,TU-299: Dec9 [T] LuminosityMin > LuminosityMax,Unidade,Valor limite,Ignorado
+REQ-04,Planos de cultivo,Plan,TU-300: Dec9 [F] Luminosidade válida (0-100000),Unidade,Valor limite,Ignorado
+REQ-04,Planos de cultivo,Plan,TU-301: Dec9 [F] Luminosidade típica (2000-5000),Unidade,Valor limite,Ignorado
+REQ-04,Planos de cultivo,Plan,TU-281: Todas validações inválidas - precedência HerbId,Unidade,Caminho principal,Ignorado
+REQ-04,Planos de cultivo,Plan,TU-284: DurationDays e StartDate inválidos - precedência Duration,Unidade,Caminho principal,Ignorado
+REQ-04,Planos de cultivo,Plan,TU-285: StartDate e WateringFrequency inválidos - precedência StartDate,Unidade,Caminho principal,Ignorado
+REQ-04,Planos de cultivo,Plan,TU-286: Happy Path Completo - Todas validações,Unidade,Caminho principal,Ativo
+REQ-10,Relatorios e exportacoes,Report,GetAllAsync_WithNoReports_ReturnsEmptyList,Unidade,Classe invalida,Ativo
+REQ-10,Relatorios e exportacoes,Report,GetByIdAsync_WithValidId_ReturnsReport,Unidade,Caminho principal,Ativo
+REQ-10,Relatorios e exportacoes,Report,CreateAsync_WithValidData_CreatesReport,Unidade,Caminho principal,Ativo
+REQ-10,Relatorios e exportacoes,Report,CreateAsync_WithInvalidUserId_ReturnsNull,Unidade,Classe invalida,Ativo
+REQ-10,Relatorios e exportacoes,Report,DeleteAsync_WithValidId_DeletesReport,Unidade,Caminho principal,Ativo
+REQ-10,Relatorios e exportacoes,Report,CreateAsync_WithReportType_CreatesWithType (Produção),Unidade,Decisao/estado,Ativo
+REQ-10,Relatorios e exportacoes,Report,CreateAsync_WithReportType_CreatesWithType (Tarefas),Unidade,Decisao/estado,Ativo
+REQ-10,Relatorios e exportacoes,Report,CreateAsync_WithReportType_CreatesWithType (Medições),Unidade,Decisao/estado,Ativo
+REQ-10,Relatorios e exportacoes,Report,CreateAsync_WithReportType_CreatesWithType (Alertas),Unidade,Decisao/estado,Ativo
+REQ-10,Relatorios e exportacoes,Report,GetByTypeAsync_ReturnsReportsOfType,Unidade,Decisao/estado,Ativo
+REQ-10,Relatorios e exportacoes,Report,CreateAsync_WithExportFormat_Stored (CSV),Unidade,Caminho principal,Ativo
+REQ-10,Relatorios e exportacoes,Report,CreateAsync_WithExportFormat_Stored (Excel),Unidade,Caminho principal,Ativo
+REQ-10,Relatorios e exportacoes,Report,CreateAsync_WithDateRange_StoresDates,Unidade,Valor limite,Ativo
+REQ-10,Relatorios e exportacoes,Report,CreateAsync_WithCurrentMonthRange,Unidade,Valor limite,Ativo
+REQ-10,Relatorios e exportacoes,Report,CreateAsync_WithFilePath_Stored,Unidade,Caminho principal,Ativo
+REQ-10,Relatorios e exportacoes,Report,ExportToCsvAsync_ReturnsFilePath,Unidade,Caminho principal,Ativo
+REQ-10,Relatorios e exportacoes,Report,ExportToExcelAsync_ReturnsFilePath,Unidade,Caminho principal,Ativo
+REQ-10,Relatorios e exportacoes,Report,ExportToCsvAsync_WithNonExistentReport_ReturnsNull,Unidade,Classe invalida,Ativo
+REQ-10,Relatorios e exportacoes,Report,CreateAsync_SetsCreatedByUser,Unidade,Caminho principal,Ativo
+REQ-10,Relatorios e exportacoes,Report,CreateAsync_SetsCreatedAtTimestamp,Unidade,Caminho principal,Ativo
+REQ-10,Relatorios e exportacoes,Report,CreateAsync_WithNullName_ReturnsNull,Unidade,Classe invalida,Ativo
+REQ-10,Relatorios e exportacoes,Report,GetAllAsync_WithLargeReportCount,Unidade,Volume/colecao,Ativo
+REQ-10,Relatorios e exportacoes,Report,GetByTypeAsync_WithMultipleTypes,Unidade,Decisao/estado,Ativo
+REQ-09,Tarefas operacionais,Task,GetAllAsync_WithNoTasks_ReturnsEmptyList,Unidade,Classe invalida,Ativo
+REQ-09,Tarefas operacionais,Task,GetByIdAsync_WithValidId_ReturnsTask,Unidade,Caminho principal,Ativo
+REQ-09,Tarefas operacionais,Task,CreateAsync_WithValidData_CreatesTask,Unidade,Caminho principal,Ativo
+REQ-09,Tarefas operacionais,Task,UpdateAsync_WithValidData_UpdatesTask,Unidade,Caminho principal,Ativo
+REQ-09,Tarefas operacionais,Task,DeleteAsync_WithValidId_DeletesTask,Unidade,Caminho principal,Ativo
+REQ-09,Tarefas operacionais,Task,GetByBatchIdAsync_ReturnsTasksForBatch,Unidade,Volume/colecao,Ignorado
+REQ-09,Tarefas operacionais,Task,GetByBatchIdAsync_WithMultipleBatches_OnlyReturnsBatchTasks,Unidade,Volume/colecao,Ativo
+REQ-09,Tarefas operacionais,Task,CreateAsync_WithValidStatus_CreatesWithStatus (Pendente),Unidade,Decisao/estado,Ativo
+REQ-09,Tarefas operacionais,Task,CreateAsync_WithValidStatus_CreatesWithStatus (Em Andamento),Unidade,Decisao/estado,Ativo
+REQ-09,Tarefas operacionais,Task,CreateAsync_WithValidStatus_CreatesWithStatus (Concluída),Unidade,Decisao/estado,Ativo
+REQ-09,Tarefas operacionais,Task,CreateAsync_WithValidStatus_CreatesWithStatus (Cancelada),Unidade,Decisao/estado,Ativo
+REQ-09,Tarefas operacionais,Task,GetByStatusAsync_ReturnsTasksWithStatus,Unidade,Decisao/estado,Ativo
+REQ-09,Tarefas operacionais,Task,UpdateAsync_TransitionPendenteToEmAndamento,Unidade,Decisao/estado,Ativo
+REQ-09,Tarefas operacionais,Task,UpdateAsync_TransitionEmAndamentoToConcluida,Unidade,Decisao/estado,Ativo
+REQ-09,Tarefas operacionais,Task,CreateAsync_WithTaskType_StoresCorrectly (Rega),Unidade,Decisao/estado,Ativo
+REQ-09,Tarefas operacionais,Task,CreateAsync_WithTaskType_StoresCorrectly (Fertilização),Unidade,Decisao/estado,Ativo
+REQ-09,Tarefas operacionais,Task,CreateAsync_WithTaskType_StoresCorrectly (Colheita),Unidade,Decisao/estado,Ativo
+REQ-09,Tarefas operacionais,Task,CreateAsync_WithTaskType_StoresCorrectly (Monitorização),Unidade,Decisao/estado,Ativo
+REQ-09,Tarefas operacionais,Task,CreateAsync_WithAssignedUser_StoresUserAssignment,Unidade,Caminho principal,Ativo
+REQ-09,Tarefas operacionais,Task,UpdateAsync_ChangeAssignedUser,Unidade,Caminho principal,Ativo
+REQ-09,Tarefas operacionais,Task,CreateAsync_WithScheduledDate_StoresDate,Unidade,Caminho principal,Ativo
+REQ-09,Tarefas operacionais,Task,UpdateAsync_SetCompletionDate_WhenMarkedComplete,Unidade,Caminho principal,Ativo
+REQ-09,Tarefas operacionais,Task,CreateAsync_WithNullName_ReturnsNull,Unidade,Classe invalida,Ativo
+REQ-09,Tarefas operacionais,Task,GetAllAsync_WithLargeBatchOfTasks,Unidade,Volume/colecao,Ignorado
+REQ-09,Tarefas operacionais,Task,GetByStatusAsync_WithMultipleTransitions,Unidade,Decisao/estado,Ativo
+REQ-XX,Cobertura complementar,Temperature,GetCurrentTemperatureAsync_WithValidBatchId_ReturnsValidMeasurement,Unidade,Volume/colecao,Ativo
+REQ-XX,Cobertura complementar,Temperature,GetCurrentTemperatureAsync_WithInvalidBatchId_ReturnsNull,Unidade,Classe invalida,Ativo
+REQ-XX,Cobertura complementar,Temperature,GetCurrentTemperatureAsync_WithZeroBatchId_ReturnsNull,Unidade,Valor limite,Ativo
+REQ-XX,Cobertura complementar,Temperature,GetCurrentTemperatureAsync_SensorUnavailable_ReturnsNull,Unidade,Classe invalida,Ativo
+REQ-XX,Cobertura complementar,Temperature,GetCurrentTemperatureAsync_MultipleValidBatchIds_ReturnsValidMeasurements (1),Unidade,Volume/colecao,Ativo
+REQ-XX,Cobertura complementar,Temperature,GetCurrentTemperatureAsync_MultipleValidBatchIds_ReturnsValidMeasurements (5),Unidade,Volume/colecao,Ativo
+REQ-XX,Cobertura complementar,Temperature,GetCurrentTemperatureAsync_MultipleValidBatchIds_ReturnsValidMeasurements (100),Unidade,Volume/colecao,Ativo
+REQ-XX,Cobertura complementar,Temperature,GetTemperatureReadingsAsync_WithValidPeriod_ReturnsMultipleMeasurements,Unidade,Volume/colecao,Ativo
+REQ-XX,Cobertura complementar,Temperature,GetTemperatureReadingsAsync_WithInvalidBatchId_ReturnsEmpty,Unidade,Classe invalida,Ativo
+REQ-XX,Cobertura complementar,Temperature,GetTemperatureReadingsAsync_WithInvertedPeriod_ReturnsEmpty,Unidade,Classe invalida,Ativo
+REQ-XX,Cobertura complementar,Temperature,GetTemperatureReadingsAsync_WithSamePeriod_ReturnsOneMeasurement,Unidade,Caminho principal,Ativo
+REQ-XX,Cobertura complementar,Temperature,GetTemperatureReadingsAsync_WithLargePeriod_ReturnsMultipleReadings,Unidade,Volume/colecao,Ativo
+REQ-XX,Cobertura complementar,Temperature,IsSensorAvailableAsync_DefaultState_ReturnsTrue,Unidade,Caminho principal,Ativo
+REQ-XX,Cobertura complementar,Temperature,IsSensorAvailableAsync_WithInvalidBatchId_ReturnsFalse,Unidade,Classe invalida,Ativo
+REQ-XX,Cobertura complementar,Temperature,IsSensorAvailableAsync_AfterSensorSetToUnavailable_ReturnsFalse,Unidade,Classe invalida,Ativo
+REQ-XX,Cobertura complementar,Temperature,IsSensorAvailableAsync_AfterSensorSetToAvailable_ReturnsTrue,Unidade,Caminho principal,Ativo
+REQ-XX,Cobertura complementar,Temperature,GetSensorErrorsAsync_WithInvalidBatchId_ReturnsEmpty,Unidade,Classe invalida,Ativo
+REQ-XX,Cobertura complementar,Temperature,GetSensorErrorsAsync_WithNoPriorErrors_ReturnsEmpty,Unidade,Classe invalida,Ativo
+REQ-XX,Cobertura complementar,Temperature,GetSensorErrorsAsync_AfterSensorError_ReturnsErrorMessage,Unidade,Caminho principal,Ativo
+REQ-XX,Cobertura complementar,Temperature,ClearSensorErrors_RemovesErrorHistory,Unidade,Caminho principal,Ativo
+REQ-XX,Cobertura complementar,Temperature,Reset_RestoresDefaultState,Unidade,Caminho principal,Ativo
+REQ-XX,Cobertura complementar,Temperature,GetCurrentTemperatureAsync_ReturnedDataHasCorrectStructure,Unidade,Caminho principal,Ativo
+REQ-XX,Cobertura complementar,Temperature,GetTemperatureReadingsAsync_AllReadingsHaveConsistentBatchId,Unidade,Volume/colecao,Ativo
+REQ-02,Gestao de utilizadores,User,GetAllAsync_WithNoUsers_ReturnsEmptyList,Unidade,Classe invalida,Ativo
+REQ-02,Gestao de utilizadores,User,GetAllAsync_WithMultipleUsers_ReturnsAll,Unidade,Volume/colecao,Ativo
+REQ-02,Gestao de utilizadores,User,GetByIdAsync_WithValidId_ReturnsUser,Unidade,Caminho principal,Ativo
+REQ-02,Gestao de utilizadores,User,GetByIdAsync_WithInvalidId_ReturnsNull,Unidade,Classe invalida,Ativo
+REQ-02,Gestao de utilizadores,User,CreateAsync_WithValidData_CreatesUser,Unidade,Caminho principal,Ativo
+REQ-02,Gestao de utilizadores,User,CreateAsync_WithDuplicateUsername_ReturnsNull,Unidade,Classe invalida,Ativo
+REQ-02,Gestao de utilizadores,User,UpdateAsync_WithValidData_UpdatesUser,Unidade,Caminho principal,Ativo
+REQ-02,Gestao de utilizadores,User,DeleteAsync_WithValidId_DeletesUser,Unidade,Caminho principal,Ativo
+REQ-02,Gestao de utilizadores,User,GetByUsernameAsync_WithValidUsername_ReturnsUser,Unidade,Caminho principal,Ativo
+REQ-02,Gestao de utilizadores,User,GetByUsernameAsync_WithNonExistentUsername_ReturnsNull,Unidade,Classe invalida,Ativo
+REQ-02,Gestao de utilizadores,User,GetByUsernameAsync_CaseSensitive_DoesNotFindWithDifferentCase,Unidade,Caminho principal,Ativo
+REQ-02,Gestao de utilizadores,User,CreateAsync_WithAllRoles_CreatesUserWithRole (UserRole.Tecnico),Unidade,Decisao/estado,Ativo
+REQ-02,Gestao de utilizadores,User,CreateAsync_WithAllRoles_CreatesUserWithRole (UserRole.Responsavel),Unidade,Decisao/estado,Ativo
+REQ-02,Gestao de utilizadores,User,CreateAsync_WithAllRoles_CreatesUserWithRole (UserRole.Administrador),Unidade,Valor limite,Ativo
+REQ-02,Gestao de utilizadores,User,GetByRoleAsync_ReturnsTechnicoUsers,Unidade,Decisao/estado,Ativo
+REQ-02,Gestao de utilizadores,User,GetByRoleAsync_ReturnsResponsavelUsers,Unidade,Decisao/estado,Ativo
+REQ-02,Gestao de utilizadores,User,GetByRoleAsync_ReturnsAdministradorUsers,Unidade,Valor limite,Ativo
+REQ-02,Gestao de utilizadores,User,GetByRoleAsync_WithNoUsersOfRole_ReturnsEmptyList,Unidade,Classe invalida,Ativo
+REQ-02,Gestao de utilizadores,User,ChangeRoleAsync_FromTechnicoToResponsavel,Unidade,Decisao/estado,Ativo
+REQ-02,Gestao de utilizadores,User,ChangeRoleAsync_FromResponsavelToAdministrador,Unidade,Valor limite,Ativo
+REQ-02,Gestao de utilizadores,User,ChangeRoleAsync_WithInvalidUserId_ReturnsNull,Unidade,Classe invalida,Ativo
+REQ-02,Gestao de utilizadores,User,ChangeRoleAsync_SameRole_StillUpdates,Unidade,Decisao/estado,Ativo
+REQ-02,Gestao de utilizadores,User,ChangeRoleAsync_UpdatesTimestamp,Unidade,Decisao/estado,Ativo
+REQ-02,Gestao de utilizadores,User,CreateAsync_NewUser_IsActive,Unidade,Caminho principal,Ativo
+REQ-02,Gestao de utilizadores,User,UpdateAsync_DeactivateUser,Unidade,Decisao/estado,Ativo
+REQ-02,Gestao de utilizadores,User,UpdateAsync_ReactivateUser,Unidade,Decisao/estado,Ativo
+REQ-02,Gestao de utilizadores,User,CreateAsync_WithNullUsername_ReturnsNull,Unidade,Classe invalida,Ativo
+REQ-02,Gestao de utilizadores,User,CreateAsync_WithNullEmail_ReturnsNull,Unidade,Classe invalida,Ativo
+REQ-02,Gestao de utilizadores,User,CreateAsync_WithNullFullName_ReturnsNull,Unidade,Classe invalida,Ativo
+REQ-02,Gestao de utilizadores,User,UpdateAsync_WithNullEmail_UpdateFails,Unidade,Classe invalida,Ativo
+REQ-02,Gestao de utilizadores,User,CreateAsync_SetsCreatedAtTimestamp,Unidade,Caminho principal,Ignorado
+REQ-02,Gestao de utilizadores,User,UpdateAsync_UpdatesUpdatedAtTimestamp,Unidade,Caminho principal,Ativo
+REQ-02,Gestao de utilizadores,User,GetAllAsync_WithLargeUserCount,Unidade,Volume/colecao,Ativo
+REQ-02,Gestao de utilizadores,User,GetByRoleAsync_WithMixedRoles_CorrectCounting,Unidade,Decisao/estado,Ativo
+REQ-02,Gestao de utilizadores,User,UpdateAsync_MultipleFieldsChanged,Unidade,Volume/colecao,Ativo
+REQ-02,Gestao de utilizadores,User,DeleteAsync_CascadeDelete_RelatedAuditLogs,Unidade,Decisao/estado,Ativo
